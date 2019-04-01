@@ -18,6 +18,7 @@ Clone the repo and install:
 .. code-block:: bash
 
     $ git clone https://github.com/Lairion/boardGame.git
+    $ cd boardGame
     $ pip install -r requirements.txt
 
 Make superuser:
