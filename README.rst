@@ -20,6 +20,7 @@ Clone the repo and install:
     $ git clone https://github.com/Lairion/boardGame.git
     $ cd boardGame
     $ pip install -r requirements.txt
+    $ python manage.py migrate
 
 Make superuser:
 
