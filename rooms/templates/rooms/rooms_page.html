@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block css %}
+        <style>
+            .uppercase {
+                text-transform: uppercase;
+            }
+        </style>
+{% endblock css %} 
+{% block content %}
+<div id="rooms">
+    <div class="container">
+        <div class="row">
+            <h1>List of Rooms
+          <button class="btn btn-success" data-toggle="modal" data-target="#addRoomModal">Add room</button>
+          </h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Number of players</th>
+                        <th scope="col">result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="room in rooms">
+                        <th scope="row">${room.id}</th>
+                        <td>${room.name}</td>
+                        <td>${room.number_of_players}</td>
+                        <td>${room.result}</td>
+                        <td>
+                            <button class="btn btn-primary" v-on:click="getRoom(room.id)">All Detail</button>
+                            <button class="btn btn-danger" v-on:click="deleteRoom(room.id)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="loading" v-if="loading===true">Loading&#8230;</div>
+    
+    {% include "rooms/components/add_modal.html" %}
+    {% include "rooms/components/current_room_modal.html" %}
+    <!-- End of article modal -->
+    
+</div>
+{% endblock content %}
+{% block js %}
+<script src="{% static 'rooms/js/crd.js' %}"></script>
+{% endblock js %}

@@ -1,0 +1,37 @@
+<div class="modal fade" id="addRoomModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Add Room</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form v-on:submit.stop.prevent="addRoom">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="room_name">Name</label>
+                        <input type="text" class="form-control" id="room_name" placeholder="Enter name" v-model="newRoom.name" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label for="deck">Deck</label>
+                        <input type="text" class="form-control uppercase" id="deck" placeholder="Enter deck" v-model="newRoom.deck" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label for="deck">Combo</label>
+                        <input type="text" class="form-control uppercase" id="combo" placeholder="Enter combo" v-model="newRoom.combo" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label for="players">Number of players</label>
+                        <input type="number" class="form-control" id="players" placeholder="Enter number of players" v-model="newRoom.number_of_players" required="required">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Run</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="loading" v-if="loading===true">Loading&#8230;</div>
+</div>
