@@ -4,10 +4,6 @@ Board game
 
 ---------------
 
-|python| |pypi| |travis| |django| |drf|
-
----------------
-
 * `Installation`_
 * `Usage`_
 
